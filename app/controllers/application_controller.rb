@@ -1,6 +1,7 @@
 
 require_relative '../../config/environment'
 
+
 class ApplicationController < Sinatra::Base
 
   configure do
@@ -44,6 +45,11 @@ class ApplicationController < Sinatra::Base
     @post = Post.find_by_id(params[:id])
     @post.delete
     erb :delete
+  end
+
+
+  get '/posts/new' do
+    erb :new
   end
 
 end
